@@ -4,7 +4,7 @@
   "description": "A little game to pick a movie to watch from my Plex library",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server/index.js",
+    "start": "set DEBUG=client,client:*,server,server:* & nodemon src/server/index.js",
     "webpack": "./node_modules/.bin/webpack -w",
     "test": "mocha --compilers babel-core/register ./test/*test.js",
     "lint": "npm-run-parallel lint:client lint:server",
@@ -22,7 +22,10 @@
   },
   "homepage": "https://github.com/dvhirtum/plex-movievsmovie#readme",
   "dependencies": {
+    "debug": "^3.1.0",
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "morgan": "^1.9.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
