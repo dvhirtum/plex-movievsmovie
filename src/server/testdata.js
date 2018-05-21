@@ -1,9 +1,11 @@
+const config = require('../../config');
+
 module.exports = [
   {
     id: 1321,
     title: 'Jurassic Park',
     year: 1993,
-    image: '/library/metadata/1321/thumb/1522768058',
+    image: `${config.plex.host}/library/metadata/1321/thumb/1522768058?X-Plex-Token=${config.plex.token}`,
     duration: '1:55',
     description: 'A wealthy entrepreneur secretly creates a theme park featuring living dinosaurs drawn from prehistoric DNA. Before opening day, he invites a team of experts and his two eager grandchildren to experience the park and help calm anxious investors. However, the park is anything but amusing as the security systems go off-line and the dinosaurs escape.',
     director: 'Steven Spielberg',
@@ -41,7 +43,7 @@ module.exports = [
     id: 1174,
     title: 'Boyhood',
     year: 2014,
-    image: '/library/metadata/1174/thumb/1526912472',
+    image: `${config.plex.host}/library/metadata/1174/thumb/1526912472?X-Plex-Token=${config.plex.token}`,
     duration: '2:45',
     description: 'The film tells a story of a divorced couple trying to raise their young son. The story follows the boy for twelve years, from first grade at age 6 through 12th grade at age 17-18, and examines his relationship with his parents as he grows.',
     director: 'Richard Linklater',
@@ -72,7 +74,7 @@ module.exports = [
     id: 575,
     title: 'Lincoln',
     year: 2012,
-    image: '/library/metadata/575/thumb/1522023240',
+    image: `${config.plex.host}/library/metadata/575/thumb/1522023240?X-Plex-Token=${config.plex.token}`,
     duration: '2:30',
     description: 'A revealing drama that focuses on the 16th President\'s tumultuous final months in office. In a nation divided by war and the strong winds of change, Lincoln pursues a course of action designed to end the war, unite the country and abolish slavery. With the moral courage and fierce determination to succeed, his choices during this critical moment will change the fate of generations to come.',
     director: 'Steven Spielberg',

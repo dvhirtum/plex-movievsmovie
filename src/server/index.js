@@ -2,10 +2,11 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const debug = require('debug')('server');
+const config = require('../../config');
 
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = config.app.port || 3000;
 const movieRouter = require('./routes/movieRoutes');
 
 app.use(morgan('tiny'));
