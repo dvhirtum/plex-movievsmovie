@@ -1,0 +1,52 @@
+{
+  "name": "plex-movievsmovie",
+  "version": "1.0.0",
+  "description": "A little game to pick a movie to watch from my Plex library",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server/index.js",
+    "webpack": "./node_modules/.bin/webpack -w",
+    "test": "mocha --compilers babel-core/register ./test/*test.js",
+    "lint": "npm-run-parallel lint:client lint:server",
+    "lint:client": "./node_modules/.bin/eslint ./src/client/index.js",
+    "lint:server": "./node_modules/.bin/eslint ./src/server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvhirtum/plex-movievsmovie.git"
+  },
+  "author": "Dick van Hirtum",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dvhirtum/plex-movievsmovie/issues"
+  },
+  "homepage": "https://github.com/dvhirtum/plex-movievsmovie#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "chai": "^4.1.2",
+    "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.17.4",
+    "npm-run-parallel": "^0.6.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  }
+}
