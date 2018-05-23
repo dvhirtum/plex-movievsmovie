@@ -1,2 +1,2 @@
-export const LOAD_MOVIES = 'LOAD_MOVIES';
+export const SELECT_MOVIE = 'SELECT_MOVIE';
 export const LOAD_MOVIES_SUCCESS = 'LOAD_MOVIES_SUCCESS';

@@ -1,10 +1,11 @@
 body {
-  background: #ACCEEC;
-  color: #005CC5;
   text-align: center;
 }
 
-#root {
-  max-width: 1020px;
-  margin: auto;
+.ui.card {
+  text-align: left;
+}
+
+.ui.card .content.selected {
+  background: rgb(233, 238, 166) !important;
 }
