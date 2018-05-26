@@ -1,9 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import App from './components/App';
-import configureStore from './store/configureStore';
+import { ConnectedRouter } from 'react-router-redux';
+import configureStore, { history } from './store/configureStore';
 import { loadMovies } from './actions/movieActions';
+import App from './components/App';
 
 import './styles/App.scss';
 
@@ -12,7 +13,9 @@ store.dispatch(loadMovies());
 
 render(
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );

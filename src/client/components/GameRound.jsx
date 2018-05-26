@@ -5,13 +5,17 @@ import { Card, Header, Container } from 'semantic-ui-react';
 import * as movieActions from '../actions/movieActions';
 import MovieCard from './MovieCard';
 
-const GameRound = ({ movies, selectedMovie, actions }) => {
+const GameRound = (props) => {
+  const {
+    movies, selectedMovie, round, actions
+  } = props;
   const toggleSelected = (movie) => {
     actions.selectMovie(movie);
   };
 
   return (
     <Container>
+      <Header as="h2">Round {round}</Header>
       <Card.Group centered>
         {movies.map(movie => (
           <MovieCard
@@ -28,9 +32,10 @@ const GameRound = ({ movies, selectedMovie, actions }) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   movies: state.movies,
-  selectedMovie: state.selectedMovie
+  selectedMovie: state.selectedMovie,
+  round: ownProps.match.params.id
 });
 
 const mapDispatchToProps = dispatch => ({
