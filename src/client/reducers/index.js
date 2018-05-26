@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import movies from './movieReducer';
-import selectedMovie from './selectedMovieReducer';
+import winners from './roundReducer';
 
 const rootReducer = combineReducers({
   movies,
-  selectedMovie,
+  winners,
   router: routerReducer
 });
 

@@ -1,11 +1,12 @@
 import * as types from './actionTypes';
 import movieService from '../services/movieService';
 
-export function selectMovie(movie) {
+export function selectMovie(movie, round) {
   return (dispatch) => {
     dispatch({
       type: types.SELECT_MOVIE,
-      movie
+      movie,
+      round
     });
   };
 }
