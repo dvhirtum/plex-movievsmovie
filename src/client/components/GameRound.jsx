@@ -50,10 +50,23 @@ const GameRound = (props) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  movies: state.movies,
-  round: ownProps.match.params.id
-});
+const mapStateToProps = (state, ownProps) => {
+  const round = ownProps.match.params.id;
+
+  let { movies } = state;
+
+  if (round === 'final') {
+    movies = [state.winners['1'], state.winners['2'], state.winners['3']];
+  } else {
+    const begin = (round - 1) * 3;
+    movies = movies.slice(begin, begin + 3);
+  }
+
+  return {
+    movies,
+    round
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(movieActions, dispatch)

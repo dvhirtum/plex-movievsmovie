@@ -113,5 +113,41 @@ module.exports = [
     ],
     freshnessRating: 9,
     audienceRating: 8
-  }
+  },
+  {
+    id: 1,
+    title: 'Iron Man',
+    year: 2008,
+    image: `${config.plex.host}/library/metadata/1321/thumb/1522768058?X-Plex-Token=${config.plex.token}`
+  },
+  {
+    id: 2,
+    title: 'The Godfather',
+    year: 1972,
+    image: `${config.plex.host}/library/metadata/1321/thumb/1522768058?X-Plex-Token=${config.plex.token}`
+  },
+  {
+    id: 3,
+    title: 'Shrek',
+    year: 2001,
+    image: `${config.plex.host}/library/metadata/1321/thumb/1522768058?X-Plex-Token=${config.plex.token}`
+  },
+  {
+    id: 4,
+    title: 'Equilibrium',
+    year: 2002,
+    image: `${config.plex.host}/library/metadata/1321/thumb/1522768058?X-Plex-Token=${config.plex.token}`
+  },
+  {
+    id: 5,
+    title: 'Apocalypse Now',
+    year: 1979,
+    image: `${config.plex.host}/library/metadata/1321/thumb/1522768058?X-Plex-Token=${config.plex.token}`
+  },
+  {
+    id: 6,
+    title: 'Cloverfield',
+    year: 2008,
+    image: `${config.plex.host}/library/metadata/1321/thumb/1522768058?X-Plex-Token=${config.plex.token}`
+  },
 ];
