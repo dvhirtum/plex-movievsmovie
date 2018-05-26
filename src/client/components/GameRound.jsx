@@ -56,7 +56,8 @@ const mapStateToProps = (state, ownProps) => {
   let { movies } = state;
 
   if (round === 'final') {
-    movies = [state.winners['1'], state.winners['2'], state.winners['3']];
+    const { round1, round2, round3 } = state.winners;
+    movies = [round1, round2, round3];
   } else {
     const begin = (round - 1) * 3;
     movies = movies.slice(begin, begin + 3);
