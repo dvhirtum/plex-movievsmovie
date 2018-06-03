@@ -2,10 +2,11 @@ body {
   text-align: center;
 }
 
-.ui.card {
-  text-align: left;
-}
+.card {
+  cursor: default;
+  max-width: 300px;
 
-.ui.card .content.selected {
-  background: rgb(233, 238, 166) !important;
+  &:hover {
+    cursor: pointer;
+  }
 }

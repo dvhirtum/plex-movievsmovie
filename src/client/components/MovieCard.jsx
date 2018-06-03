@@ -1,11 +1,13 @@
 import React from 'react';
 
-const MovieCard = ({ movie, select }) => (
+const MovieCard = ({ movie, focus, select, hover }) => (
   <div
-    className="card"
+    className={focus ? 'card bg-success mx-auto' : 'card mx-auto'}
     role="button"
     onClick={e => select(movie, e)}
     onKeyPress={e => select(movie, e)}
+    onMouseEnter={e => hover(movie, e)}
+    onMouseLeave={e => hover(movie, e)}
     tabIndex="0"
   >
     <img className="card-img-top" src={movie.image} alt={movie.title} />

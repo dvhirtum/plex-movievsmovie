@@ -12,11 +12,11 @@ const Winner = ({ winner, actions }) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Winner!</h2>
       <MovieCard movie={winner} />
-      <h2>You picked <em>{winner.title}</em>. Enjoy watching!</h2>
-      <button type="button" className="btn btn-prinmary" onClick={playAgain}>
+      <h4>You picked <em>{winner.title}</em>. Enjoy watching!</h4>
+      <button type="button" className="btn btn-primary" onClick={playAgain}>
         Play again
       </button>
     </div>

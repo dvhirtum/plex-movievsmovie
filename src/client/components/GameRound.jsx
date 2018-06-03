@@ -5,11 +5,20 @@ import * as movieActions from '../actions/movieActions';
 import MovieCard from './MovieCard';
 import { history } from '../store/configureStore';
 
-const GameRound = (props) => {
-  const {
-    movies, round, actions
-  } = props;
-  const toggleSelected = (movie) => {
+class GameRound extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      hover: 0
+    };
+
+    this.toggleSelected = this.toggleSelected.bind(this);
+    this.toggleHover = this.toggleHover.bind(this);
+  }
+
+  toggleSelected(movie) {
+    const { round, actions } = this.props;
     actions.selectMovie(movie, round);
     switch (round) {
       case '1':
@@ -27,27 +36,44 @@ const GameRound = (props) => {
       default:
         history.push('/');
     }
-  };
+  }
 
-  return (
-    <div>
-      {round === 'final'
-        ? <h2>Final round!</h2>
-        : <h2>Round {round}</h2>}
-      <div className="card-group">
-        {movies.map(movie => (
-          <MovieCard
-            key={movie.id}
-            movie={movie}
-            select={toggleSelected}
-          />))}
+  toggleHover(movie) {
+    if (this.state.hover === movie.id) {
+      this.setState({
+        hover: 0
+      });
+    } else {
+      this.setState({
+        hover: movie.id
+      });
+    }
+  }
+
+  render() {
+    const { movies, round } = this.props;
+    return (
+      <div className="container">
+        {round === 'final'
+          ? <h2>Final round!</h2>
+          : <h2>Round {round}</h2>}
+        <div className="card-deck">
+          {movies.map(movie => (
+            <MovieCard
+              key={movie.id}
+              movie={movie}
+              focus={this.state.hover === movie.id}
+              select={this.toggleSelected}
+              hover={this.toggleHover}
+            />))}
+        </div>
+        {round === 'final'
+          ? <h4>These are the movies you picked. Now pick the final winner!</h4>
+          : <h4>Pick the movie you would most like to see!</h4>}
       </div>
-      {round === 'final'
-        ? <h4>These are the movies you picked. Now pick the final winner!</h4>
-        : <h4>Pick the movie you would most like to see!</h4>}
-    </div>
-  );
-};
+    );
+  }
+}
 
 const mapStateToProps = (state, ownProps) => {
   const round = ownProps.match.params.id;
