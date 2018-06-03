@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Card, Header, Container } from 'semantic-ui-react';
 import * as movieActions from '../actions/movieActions';
 import MovieCard from './MovieCard';
 import { history } from '../store/configureStore';
@@ -31,22 +30,22 @@ const GameRound = (props) => {
   };
 
   return (
-    <Container>
+    <div>
       {round === 'final'
-        ? <Header as="h2">Final round!</Header>
-        : <Header as="h2">Round {round}</Header>}
-      <Card.Group centered>
+        ? <h2>Final round!</h2>
+        : <h2>Round {round}</h2>}
+      <div className="card-group">
         {movies.map(movie => (
           <MovieCard
             key={movie.id}
             movie={movie}
             select={toggleSelected}
           />))}
-      </Card.Group>
+      </div>
       {round === 'final'
-        ? <Header as="h2">These are the movies you picked. No pick the final winner!</Header>
-        : <Header as="h4">Pick the movie you would most like to see!</Header>}
-    </Container>
+        ? <h4>These are the movies you picked. Now pick the final winner!</h4>
+        : <h4>Pick the movie you would most like to see!</h4>}
+    </div>
   );
 };
 

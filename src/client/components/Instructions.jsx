@@ -1,16 +1,13 @@
 import React from 'react';
-import { Container, Header, Button } from 'semantic-ui-react';
-import { Route } from 'react-router-dom';
+import { history } from '../store/configureStore';
 
 const Instructions = () => (
-  <Container>
-    <Header as="h2">Instructions</Header>
-    <Route render={({ history }) => (
-      <Button onClick={() => history.push('/')}>
-        Back
-      </Button>)}
-    />
-  </Container>
+  <div>
+    <h2>Instructions</h2>
+    <button type="button" className="btn btn-primary" onClick={() => history.push('/')}>
+      Back
+    </button>
+  </div>
 );
 
 export default Instructions;

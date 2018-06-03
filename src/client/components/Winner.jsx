@@ -1,20 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, Header, Container } from 'semantic-ui-react';
-import { Route } from 'react-router-dom';
 import MovieCard from './MovieCard';
+import { history } from '../store/configureStore';
 
 const Winner = ({ winner }) => (
-  <Container>
-    <Header as="h2">Winner!</Header>
+  <div>
+    <h2>Winner!</h2>
     <MovieCard movie={winner} />
-    <Header as="h2">You picked <em>{winner.title}</em>. Enjoy watching!</Header>
-    <Route render={({ history }) => (
-      <Button onClick={() => history.push('/')}>
-        Play again
-      </Button>)}
-    />
-  </Container>
+    <h2>You picked <em>{winner.title}</em>. Enjoy watching!</h2>
+    <button type="button" className="btn btn-prinmary" onClick={() => history.push('/')}>
+      Play again
+    </button>
+  </div>
 );
 
 const mapStateToProps = state => ({

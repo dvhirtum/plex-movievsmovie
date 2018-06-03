@@ -1,20 +1,15 @@
 import React from 'react';
-import { Container, Button } from 'semantic-ui-react';
-import { Route } from 'react-router-dom';
+import { history } from '../store/configureStore';
 
 const Home = () => (
-  <Container>
-    <Route render={({ history }) => (
-      <Button onClick={() => history.push('/instructions')}>
-        Instructions
-      </Button>)}
-    />
-    <Route render={({ history }) => (
-      <Button primary onClick={() => history.push('/round/1')}>
-        Start the game
-      </Button>)}
-    />
-  </Container>
+  <div>
+    <button type="button" className="btn btn-secondary" onClick={() => history.push('/instructions')}>
+      Instructions
+    </button>
+    <button type="button" className="btn btn-primary" onClick={() => history.push('/round/1')}>
+      Start the game
+    </button>
+  </div>
 );
 
 export default Home;
